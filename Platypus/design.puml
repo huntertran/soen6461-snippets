@@ -1,0 +1,69 @@
+@startuml Biodom
+
+package layer0 <<Rectangle>> {
+    interface IAnimal {
+        void eat();
+    }
+}
+
+package layer1 <<Rectangle>> {
+    interface IMammal {
+        void warmBlood();
+        void giveBirth();
+    }
+    interface IBird {
+        void fly();
+    }
+    interface IReptile {
+        void coldBlood();
+    }
+}
+
+package layer2 <<Rectangle>> {
+    interface IDog {
+        void bark();
+    }
+    interface ICat {
+        void meow();
+    }
+}
+
+interface ILayingEgg
+
+package ConcreteClass <<Rectangle>>{
+    class Eagle
+    class Owl
+    class Crocodile
+    class Snake
+    class Chihuahua
+    class Husky
+    class MainCoon
+    class LongHair
+    class Platypus #GreenYellow
+}
+
+IMammal -- IAnimal
+IBird -- IAnimal
+IReptile -- IAnimal
+
+Eagle -- IBird
+Owl -- IBird
+
+Crocodile -- IReptile
+Snake -- IReptile
+
+IDog -- IMammal
+ICat -- IMammal
+
+Chihuahua -- IDog
+Husky -- IDog
+
+MainCoon -- ICat
+LongHair -- ICat
+
+Platypus -- ILayingEgg
+Platypus -- IAnimal
+
+hide empty members
+
+@enduml
