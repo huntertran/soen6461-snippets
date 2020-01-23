@@ -1,3 +1,5 @@
+package ReuseAndSubtypeCombined;
+
 public class App {
     public static void main(String[] args) {
         Measure length = new Length();

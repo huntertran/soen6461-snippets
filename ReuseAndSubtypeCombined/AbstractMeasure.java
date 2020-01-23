@@ -1,5 +1,7 @@
+package ReuseAndSubtypeCombined;
+
 public abstract class AbstractMeasure {
-    public int getValue() {
+    public final int getValue() {
         System.out.println("Before...");
         return this.getRealValue();
     }
