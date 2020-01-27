@@ -10,4 +10,4 @@ Platypus have some characteristic that belong to both mammal and reptile
 
 To design of software system for Biodôme Montréal, we have the following diagram
 
-![diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/huntertran/soen6461-snippets/master/Platypus/design.puml)
+![diagram](https://raw.githubusercontent.com/huntertran/soen6461-snippets/blob/master/out/Platypus/design/Biodom.png)
