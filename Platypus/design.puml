@@ -9,7 +9,6 @@ package layer0 <<Rectangle>> {
 package layer1 <<Rectangle>> {
     interface IMammal {
         void warmBlood();
-        void giveBirth();
     }
     interface IBird {
         void fly();
@@ -28,7 +27,13 @@ package layer2 <<Rectangle>> {
     }
 }
 
-interface ILayingEgg
+interface IBirth {
+    void performBirth()
+}
+
+class LayEgg
+
+class GiveLiveBirth
 
 package ConcreteClass <<Rectangle>>{
     class Eagle
@@ -61,8 +66,11 @@ Husky -- IDog
 MainCoon -- ICat
 LongHair -- ICat
 
-Platypus -- ILayingEgg
-Platypus -- IAnimal
+IBirth -- LayEgg
+IBirth -- GiveLiveBirth
+
+Platypus -- IMammal
+Platypus -- IBirth
 
 hide empty members
 
