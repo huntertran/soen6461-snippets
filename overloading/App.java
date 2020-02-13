@@ -7,7 +7,7 @@ public class App {
         // Foo from Sub class
 
         final SubClass subClass = new SubClass();
-        ((SuperClass)subClass).foo();
+        ((SuperClass) subClass).foo();
         // Foo from Sub class
     }
 }
