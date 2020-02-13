@@ -1,4 +1,4 @@
-package overloading;
+package overriding;
 
 public class App {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {

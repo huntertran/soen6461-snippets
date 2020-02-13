@@ -1,4 +1,4 @@
-package overloading;
+package overriding;
 
 public class SubClass extends SuperClass {
     public void foo() {
