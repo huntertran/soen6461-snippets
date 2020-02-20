@@ -8,6 +8,10 @@ public class ForwardingSet<E> implements Set<E> {
 
     private Set<E> set;
 
+    public ForwardingSet(Set<E> set) {
+        this.set = set;
+    }
+
     @Override
     public int size() {
         return set.size();
@@ -60,20 +64,17 @@ public class ForwardingSet<E> implements Set<E> {
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        // TODO Auto-generated method stub
-        return false;
+        return set.retainAll(c);
     }
 
     @Override
     public boolean removeAll(Collection<?> c) {
-        // TODO Auto-generated method stub
-        return false;
+        return set.removeAll(c);
     }
 
     @Override
     public void clear() {
-        // TODO Auto-generated method stub
-
+        set.clear();
     }
 
 }
