@@ -1,15 +1,9 @@
 package patterns.visitor;
 
-public class StatementNode implements IElement {
-
-    private final String name;
+public class StatementNode extends AbstractElement implements IElement {
 
     public StatementNode(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return this.name;
+        super(name);
     }
 
     @Override

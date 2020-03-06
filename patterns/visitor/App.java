@@ -6,6 +6,8 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
 
+        List<List<IElement>> elementGroup = new ArrayList<>();
+
         List<IElement> methods = new ArrayList<>();
 
         for (int i = 0; i < 3; i++) {
@@ -21,13 +23,17 @@ public class App {
         }
 
         List<IElement> fields = new ArrayList<>();
+
         for (int i = 0; i < 4; i++) {
             FieldNode field = new FieldNode(String.valueOf(i));
             fields.add(field);
         }
 
-        ClassNode aClassNode = new ClassNode("testClass", methods, fields);
+        elementGroup.add(fields);
+        elementGroup.add(methods);
 
-        // aClassNode.accept(aVisitor);
+        ClassNode aClassNode = new ClassNode("testClass", elementGroup);
+
+        aClassNode.accept(new Printer(System.out));
     }
 }

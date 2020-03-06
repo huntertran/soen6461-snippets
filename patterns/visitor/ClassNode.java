@@ -2,30 +2,20 @@ package patterns.visitor;
 
 import java.util.List;
 
-public class ClassNode implements IElement {
+public class ClassNode extends AbstractElement implements IElement {
+    private final List<List<IElement>> elementGroup;
 
-    private final String name;
-    private final List<IElement> methods;
-    private final List<IElement> fields;
-
-    public ClassNode(final String name, List<IElement> methods, List<IElement> fields) {
-        this.name = name;
-        this.methods = methods;
-        this.fields = fields;
-    }
-
-    public String getName() {
-        return this.name;
+    public ClassNode(final String name, List<List<IElement>> elementGroup) {
+        super(name);
+        this.elementGroup = elementGroup;
     }
 
     @Override
     public void accept(IVisitor aVisitor) {
-        for (IElement method : this.methods) {
-            aVisitor.visit(method);
-        }
-
-        for (IElement field : this.fields) {
-            aVisitor.visit(field);
+        for (List<IElement> elementList : elementGroup) {
+            for (IElement element : elementList) {
+                aVisitor.visit(element);
+            }
         }
     }
 }

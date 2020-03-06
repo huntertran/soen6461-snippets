@@ -1,21 +1,12 @@
 package patterns.visitor;
 
-public class FieldNode implements IElement {
-
-    private final String name;
-
-    public FieldNode(String name){
-        this.name = name;
-    }
-
-    public String getName() {
-        return this.name;
+public class FieldNode extends AbstractElement implements IElement {
+    public FieldNode(String name) {
+        super(name);
     }
 
     @Override
     public void accept(IVisitor aVisitor) {
         aVisitor.visit(this);
-
     }
-    
 }
