@@ -1,21 +1,24 @@
 package patterns.visitor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MethodNode extends AbstractElement implements IElement {
 
-    private final List<IElement> statements;
-
     public MethodNode(String name, List<IElement> statements) {
-        super(name);
-        this.statements = statements;
+        super(name, null);
     }
 
     @Override
     public void accept(IVisitor aVisitor) {
-        for (IElement statement : this.statements) {
-            aVisitor.visit(statement);
+        for (List<IElement> statement : this.elementGroup) {
+            // aVisitor.visit(statement);
         }
+    }
+
+    @Override
+    public void open(IElement element) {
+
     }
 
 }
