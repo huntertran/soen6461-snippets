@@ -15,4 +15,7 @@ public abstract class AbstractElement {
     public String getName() {
         return this.name;
     }
+
+    public void open(IElement element) {
+    }
 }

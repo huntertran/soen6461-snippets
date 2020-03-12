@@ -13,11 +13,8 @@ public class ClassNode extends AbstractElement implements IElement {
         for (List<IElement> elementList : this.elementGroup) {
             for (IElement element : elementList) {
                 aVisitor.visit(element);
+                element.accept(aVisitor);
             }
         }
-    }
-
-    @Override
-    public void open(IElement element) {
     }
 }
