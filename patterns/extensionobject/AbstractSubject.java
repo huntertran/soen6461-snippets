@@ -12,7 +12,7 @@ public abstract class AbstractSubject {
     public void addExtension(final String extensionName, final Class<? extends IExtension> extensionClass) {
         try {
             final IExtension extension = extensionClass.newInstance();
-            final Method dependencyInjector = extensionClass.getMethod("setExtendedMethod", IExtension.class);
+            final Method dependencyInjector = extensionClass.getMethod("setExtendedSubject", ISubject.class);
             dependencyInjector.invoke(extension, this);
             this.mapOfExtensionInstances.put(extensionName, extension);
         } catch (NoSuchMethodException e) {

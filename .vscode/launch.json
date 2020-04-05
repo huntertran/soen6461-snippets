@@ -8,6 +8,13 @@
             "type": "java",
             "name": "CodeLens (Launch) - App",
             "request": "launch",
+            "mainClass": "patterns.extensionobject.App",
+            "projectName": "TestCodeSnippet_a1ae6fc3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
             "mainClass": "patterns.singleton.App",
             "projectName": "soen6461-snippets_4a71059"
         },
