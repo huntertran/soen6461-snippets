@@ -1,25 +1,11 @@
 package patterns.extensionobject;
 
-import patterns.extensionobject.extensions.AnotherSpecificExtension;
-import patterns.extensionobject.extensions.IExtension;
-import patterns.extensionobject.extensions.NoExtension;
-import patterns.extensionobject.extensions.OneSpecificExtension;
-
-public class ConcreteSubject implements Subject {
+public class ConcreteSubject extends AbstractSubject implements ISubject {
 
     @Override
-    public IExtension getExtension(String extensionName) {
-        switch (extensionName) {
-            case "OneSpecificExtension": {
-                return new OneSpecificExtension();
-            }
-            case "AnotherSpecificExtension": {
-                return new AnotherSpecificExtension();
-            }
-            default: {
-                return new NoExtension();
-            }
-        }
+    public String methodToExtend(String param) {
+        System.out.println(param);
+        return param;
     }
 
 }
